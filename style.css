@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family="Roboto":ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
 
-*{
-    transition: all 0.3s ease-in !important;
+*, body, html, head{
+    transition: all 0.3s linear !important;
 }
 
 body{
@@ -17,7 +17,6 @@ body{
 .wrapper{
     max-width: 1296px;
     margin: 0 auto;
-    padding-left: 20px;
 }
 
 header{
@@ -45,7 +44,7 @@ header .navigation{
 }
 
 header .navigation .nav_link{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 150%;
     color: #FFFFFF;
@@ -60,7 +59,7 @@ header .navigation .nav_link:hover{
 
 header .btn{
     cursor: pointer;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 150%;
     color: #FFFFFF;
@@ -78,8 +77,8 @@ header .btn:hover{
 }
 
 .head_block{
-    background: url(assets/main-screen__bgc.png) no-repeat;
-    background-position: center;
+    background: url(assets/main-screen__bgc.png);
+    background-repeat: no-repeat;
     background-size: cover;
     padding: 270px 32px 218px 32px;
     
@@ -87,7 +86,7 @@ header .btn:hover{
 
 .head_block .title{
     max-width: 920px;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 64px;
@@ -111,7 +110,7 @@ header .btn:hover{
 }
 
 .head_block .date-block .date .date_number{
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -120,9 +119,7 @@ header .btn:hover{
 }
 
 .head_block .date-block .date .date_description{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 140%;
     text-align: center;
@@ -147,19 +144,16 @@ header .btn:hover{
 .bought_course{
     cursor: pointer;
     padding: 10px 30px;
-    max-width: 169px;
+    max-width: 180px;
     max-height: 44px;
     background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
     border-radius: 50px;
     text-align: center;
     color: #FFFFFF;
-    font-family: Roboto, sans-serif;
-    font-style: normal;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 16px;
     line-height: 150%;
-    transition: backgroud 0.3s;
-
 }
 
 .bought_course:hover{
@@ -177,7 +171,7 @@ header .btn:hover{
 }
 
 .under_head_block .type_of_contestants .done_course_contestnts{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -188,7 +182,7 @@ header .btn:hover{
 }
 
 .under_head_block .type_of_contestants .all_contestnts{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -220,7 +214,7 @@ header .btn:hover{
 }
 
 .under_head_block .money_block .money {
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -230,7 +224,7 @@ header .btn:hover{
 }
 
 .money_line_block, .done_course_contestnts_number, .money {
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -271,7 +265,7 @@ header .btn:hover{
 }
 
 .computer_main_text{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 48px;
@@ -282,7 +276,7 @@ header .btn:hover{
 }
 
 .computer_second_text{
-    font-family: Roboto,sans-serif;
+    font-family: "Roboto",sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -295,7 +289,7 @@ header .btn:hover{
 
 .main_info{
     margin: 200px 0 80px 0;    
-    font-family: Roboto;
+    font-family: "Roboto";
     font-style: normal;
     font-weight: bold;
     font-size: 48px;
@@ -318,18 +312,13 @@ header .btn:hover{
     max-width: 360px;
 }
 
-
-
-
 .photo_of_profession{
     text-align: center;
-   
-   
 }
 
 .type_of_profession{
     text-align: center;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 24px;
     line-height: 140%;
@@ -338,9 +327,9 @@ header .btn:hover{
     
 }
 
-.description_fot_profession{
+.description_for_profession{
     text-align: center;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 160%;
     color: #FFFFFF;
@@ -358,7 +347,7 @@ header .btn:hover{
 .sponsors_block_main{
     display: flex;
     align-items: center;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 48px;
     line-height: 140%;
@@ -422,7 +411,7 @@ header .btn:hover{
 }
 
 .quick_start_txt{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 48px;
     line-height: 140%;
@@ -433,7 +422,7 @@ header .btn:hover{
 .quick_start_description{
     padding-top: 28px;
     max-width: 450px;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 160%;    
     color: #FFFFFF;
@@ -447,7 +436,7 @@ header .btn:hover{
 
 
 .percent{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 36px;
     line-height: 140%;
@@ -474,7 +463,7 @@ header .btn:hover{
 
 .percent_description{
     max-width: 300px;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -493,7 +482,7 @@ header .btn:hover{
 .teachers{
     display: flex;
     align-items: center;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 48px;
     line-height: 140%;
@@ -514,7 +503,7 @@ header .btn:hover{
 
 .name{
     padding: 40px 0px 14px;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 24px;
     line-height: 140%;
@@ -523,7 +512,7 @@ header .btn:hover{
 }
 
 .type_of_work{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 160%;
     color: #FFFFFF;
@@ -536,7 +525,7 @@ header .btn:hover{
     width: 144px;
     height: 44px;
     border-radius: 40px;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: #180b0b;
     border: 1px solid #FFFFFF;
     transition: all 0.3s ease-in;
@@ -560,7 +549,7 @@ header .btn:hover{
 }
 
 .the_first_info_footer{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 48px;
     line-height: 140%;
@@ -569,7 +558,7 @@ header .btn:hover{
 }
 
 .the_second_info_footer{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 160%;
     color: #FFFFFF;
@@ -591,7 +580,7 @@ header .btn:hover{
     border-radius: 50px;
     border: none;
     color: white;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     letter-spacing: 1px;
     padding-left: 26px;
@@ -604,11 +593,12 @@ header .btn:hover{
     height: 50px;
     background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
     border-radius: 50px;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     letter-spacing: 1px;
     color: white;
     padding: 0 auto;
+    transform: translateX(-40px);
 }
 
 .footer_button:hover{
@@ -641,7 +631,7 @@ header .btn:hover{
 
 .special_info_footer{
     padding-top: 50px;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 20px;
     line-height: 160%;
     opacity: 0.8;
@@ -650,7 +640,7 @@ header .btn:hover{
 }
 
 .kostya{
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: bold;
     padding-left: 15px;
     cursor: pointer;
@@ -661,20 +651,234 @@ header .btn:hover{
     color: rgb(255, 251, 0);    
 }
 
+@media (min-width: 1200px) and (max-width: 1360px){
+    header{
+        padding-right: 60px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px){
 
+    button.btn{
+        display: none;
+    }
 
+    .nav_link{
+        margin-left: 20px;
+    }
 
-
-
-
-
-@media screen and (max-width: 1048px){
-    header .navigation, header .btn{
-        background: none;
+    .computer_text{
+        padding: 0;
     }
 }
 
-@media screen and (min-width: 640px) and (max-width: 1047px){
+@media (min-width: 768px) and (max-width: 991px){
+
+    .header_main_logo{
+        min-width: 50px;
+        min-height: 50px;
+    }
+
+    .head_block{
+        padding: 170px 32px 180px 32px;
+    }
+    
+    .date-block{
+        margin-top: 40px;
+    }
+
+    .number_of_percent_100{
+        padding: 20px 0 35px 0px;
+    }
+    
+    .number_of_percent_75{
+        padding: 26px 0 41px 0px;
+    }
+    
+    .number_of_percent_50{
+        padding: 35px 0 50px 0px;
+    }
+    
+    .number_of_percent_conclusion{
+        padding: 41px 0 56px 0px;
+    }
+
+    .bought_course{
+        margin-bottom: 20px;
+    }
+
+    .contestants{
+        margin-bottom: 20px;
+    }
+
+    header .navigation, header .btn, .nav_link{
+        font-size: 0px;
+        z-index: -1000;
+        background: none;
+    }
+
+    .computer {
+        flex-direction: column-reverse;
+        row-gap: 32px;
+        column-gap: 32px;
+        margin-top: 32px;
+    }
+
+    .computer_text{
+        padding-top: 0;   
+    }
+
+    header .navigation, header .btn, .nav_link{
+        font-size: 0px;
+        display: none;
+        z-index: -1000;
+    }
+
+    .quick_start{
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .under_head_block{
+        padding: 40px 16px 20px 16px;
+        height: 200px;
+    }
+
+    .head_block{
+        padding: 160px 32px 108px 32px;
+    }
+
+    .under_computer_block_the_first_block{
+        padding: 0px 0px 80px 0px;
+    }
+
+    .computer_main_text, .quick_start, .main_info, .sponsors_block_text, .name_of_our_teachers{
+        margin: 150px 0px 0px 0px ;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    .header_main_logo{
+        min-width: 50px;
+        min-height: 50px;
+    }
+
+    header .navigation, header .btn, .nav_link{
+        font-size: 0px;
+        display: none;
+        z-index: -1000;
+    }
+
+    .our_teachers{
+        padding: 70px 0px 28px 0px;
+    }
+    
+    .teachers{
+        display: flex;
+        align-items: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 140%;
+        color: #FFFFFF;
+    }
+    
+    .our_teacher_block{
+        padding-top: 114px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .photo_of_teachers{
+        margin: 0px auto;
+        width: 80%;
+        height: 80%;
+    }
+    
+    .name{
+        padding: 40px 0px 14px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 140%;
+        color: #FFFFFF;
+        
+    }
+    
+    .type_of_work{
+        display: flex;
+        flex-wrap: wrap;
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        line-height: 160%;
+        color: #FFFFFF;
+        opacity: 0.8;
+        padding-bottom: 30px;
+       
+    }
+    
+    .about_teacher{
+        width: 144px;
+        height: 44px;
+        border-radius: 40px;
+        font-family: "Roboto", sans-serif;
+        background-color: #180b0b;
+        border: 1px solid #FFFFFF;
+        transition: all 0.3s ease-in;
+        color: #FFFFFF;
+        opacity: 1;
+    }
+    
+    .sponsors_block_text{
+        font-size: 38px;
+    }
+
+    .under_computer_block_the_second_block{
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+
+    .percent_description{
+        padding-bottom: 30px;
+    }
+
+    .number_of_percent_100, .number_of_percent_conclusion, .number_of_percent_75, .number_of_percent_50{
+        padding:  20px 0 10px 0;
+    }
+
+    .computer_photo{
+        transform: translate(26px, 90px);
+        width: 90%;
+        height: 90%;
+    }
+
+    .square{
+        flex-shrink: 0;
+        width: 468px;
+        height: 436px;
+        background-color: none;
+        border-radius: 0px;
+        border-width: 30px;
+        border-style: solid;
+        border-color: linear-gradient(94.26deg, #C89AFC 9.51%, #7C6AFA 90.23%); /*не рабоатет*/
+        border-color: rgb(190, 31, 190);       
+    }
+
+    .head_block .title{
+        font-family: "Roboto", sans-serif;
+        font-size: 52px;
+        font-weight: bold;
+        line-height: 140%;
+        color: #FFFFFF;
+        margin-bottom: 50px;
+    }
+
+    .bought_course{
+        margin-bottom: 20px;
+    }
+
     .computer {
         flex-direction: column-reverse;
         row-gap: 32px;
@@ -684,8 +888,497 @@ header .btn:hover{
 
     .computer_text{
         padding-top: 0;
+    }   
+
+    .head_block .date-block{
+        display: flex;
+        column-gap: 60px;
+        flex-wrap: wrap;        
+    }
+
+    .head_block .date-block .date{
+        margin-top: 20px;
+        width: 105px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .main_info{
+        margin: 200px 0 80px 0;    
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 140%;
+        color: #FFFFFF;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    
+    
+    .profession{
+        max-width: 1300px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+    
+    .block_of_proffession{
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    
+    .photo_of_profession{
+        margin: 0 auto;
+    }
+    
+    .type_of_profession{
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 140%;
+        color: #FFFFFF;
+        padding: 60px 0 30px 0 ;
         
     }
-}
     
+    .description_for_profession{
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 160%;
+        color: #FFFFFF;
+        opacity: 0.8;
+        margin-bottom: 80px;
+    }
 
+    .quick_start_svg{
+        width: 60px;
+        min-height: 50px;
+    }
+    
+    .contestants{
+        display: none;
+    }
+
+    .bought_course{
+        margin-bottom: 25px;
+    }
+
+    .name_of_our_teachers{
+        text-align: center;
+        align-items: center;
+    }
+
+    .name_of_teacher{
+        display: none;
+    }
+
+    .computer_main_text, .quick_start, .main_info, .sponsors_block_text, .name_of_our_teachers{
+        margin: 150px 0px 0px 0px ;
+    }
+
+    .sponsors_block{
+        padding: 0px;
+    }
+
+    .sponsors_block_main{
+        padding: 0px;
+    }
+
+    .quick_start{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .under_head_block{
+        padding: 40px 16px 20px 16px;
+        height: 200px;
+    }
+
+    .head_block{
+        padding: 160px 32px 108px 32px;
+    }
+
+    .under_computer_block_the_first_block{
+        padding: 0px 0px 80px 0px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 479px){
+
+    .quick_start{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .under_head_block{
+        padding: 40px 16px 20px 16px;
+        height: 200px;
+    }
+
+    .head_block{
+        padding: 160px 32px 108px 32px;
+    }
+
+    .under_computer_block_the_first_block{
+        padding: 0px 0px 80px 0px;
+    }
+
+    .computer_main_text, .quick_start, .main_info, .sponsors_block_text, .name_of_our_teachers{
+        margin: 150px 0px 0px 0px ;
+    }
+
+    .sponsors_block{
+        padding: 0px;
+    }
+
+    .sponsors_block_main{
+        padding: 0px;
+    }
+
+    .contestants{
+        display: none;
+    }
+
+    .bought_course{
+        margin-top: -10px;
+    }
+
+    .money_line_block{
+        margin-top: 40px;
+    }
+
+    header .navigation, header .btn, .nav_link{
+        font-size: 0px;
+        display: none;
+        z-index: -1000;
+    }
+
+    .our_teachers{
+        padding: 70px 0px 28px 0px;
+    }
+    
+    .teachers{
+        display: flex;
+        align-items: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 140%;
+        color: #FFFFFF;
+    }
+    
+    .our_teacher_block{
+        padding-top: 114px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .photo_of_teachers{
+        margin: 0px auto;
+        width: 80%;
+        height: 80%;
+    }
+    
+    .name{
+        padding: 40px 0px 14px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 140%;
+        color: #FFFFFF;
+    }
+    
+    .type_of_work{
+        font-family: "Roboto", sans-serif;
+        font-size: 12px;
+        line-height: 160%;
+        color: #FFFFFF;
+        opacity: 0.8;
+        padding-bottom: 30px;
+       
+    }
+    
+    .about_teacher{
+        width: 144px;
+        height: 44px;
+        border-radius: 40px;
+        font-family: "Roboto", sans-serif;
+        background-color: #180b0b;
+        border: 1px solid #FFFFFF;
+        transition: all 0.3s ease-in;
+        color: #FFFFFF;
+        opacity: 1;
+    }
+    
+    .sponsors_block_text{
+        font-size: 38px;
+    }
+
+    .under_computer_block_the_second_block{
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+
+    .percent_description{
+        padding-bottom: 30px;
+    }
+
+    .number_of_percent_100, .number_of_percent_conclusion, .number_of_percent_75, .number_of_percent_50{
+        padding:  20px 0 10px 0;
+    }
+
+    .computer_photo{
+        transform: translate(12px, 25px);
+        width: 110%;
+        height: 110%;
+    }
+
+    .square{
+        flex-shrink: 0;
+        width: 318px;
+        height: 276px;
+        background-color: none;
+        border-radius: 0px;
+        border-width: 20px;
+        border-style: solid;
+        border-color: linear-gradient(94.26deg, #C89AFC 9.51%, #7C6AFA 90.23%); /*не рабоатет*/
+        border-color: rgb(190, 31, 190);       
+    }
+
+    .head_block .title{
+        font-family: "Roboto", sans-serif;
+        font-size: 30px;
+        line-height: 140%;
+        color: #FFFFFF;
+        margin-bottom: 50px;
+    }
+
+    .bought_course{
+        margin-bottom: 20px;
+    }
+
+    .computer {
+        flex-direction: column-reverse;
+        row-gap: 32px;
+        column-gap: 32px;
+        margin-top: 32px;
+    }
+
+    .computer_text{
+        padding-top: 0;
+    }   
+
+    .head_block .date-block{
+        display: flex;
+        column-gap: 30px;
+        flex-wrap: wrap;        
+    }
+
+    .head_block .date-block .date{
+        margin-top: 30px;
+        width: 105px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .main_info{   
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 140%;
+        color: #FFFFFF;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    
+    .profession{
+        max-width: 1300px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+    
+    .block_of_proffession{
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    
+    .photo_of_profession{
+        margin: 0 auto;
+    }
+    
+    .type_of_profession{
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 140%;
+        color: #FFFFFF;
+        padding: 20px 0 30px 0 ;
+        
+    }
+    
+    .description_for_profession{
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 160%;
+        color: #FFFFFF;
+        opacity: 0.8;
+        margin-bottom: 80px;
+    }
+
+    .quick_start_txt{
+        font-size: 30px;
+    }
+
+    .footer_input_button{
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 56px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .email{
+        width: 100%;
+        height: 50px;
+        background: #ffffff34;
+        border-radius: 50px;
+        border: none;
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        letter-spacing: 1px;
+        padding-left: 26px;
+        align-items: center; 
+        margin-bottom: 16px;   
+    }
+    
+    .footer_button{
+        cursor: pointer;
+        width: 160px;
+        height: 50px;
+        background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
+        border-radius: 50px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: white;
+        transform: translateX(-40px);
+        margin-left: 25%;
+    }
+
+    .name_of_our_teachers{
+        font-size: 38px;
+        text-align: center;
+    }
+
+    
+.our_teachers{
+    padding: 70px 0px 18px 0px;
+}
+
+.our_teacher_block{
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.photo_of_teachers{
+    margin: 0px auto;
+}
+
+.name{
+    padding: 40px 0px 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 140%;
+    color: #FFFFFF;
+    
+}
+
+.type_of_work{
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 160%;
+    color: #FFFFFF;
+    opacity: 0.8;
+    padding-bottom: 30px;
+   
+}
+
+.about_teacher{
+    width: 144px;
+    height: 44px;
+    border-radius: 40px;
+    font-family: "Roboto", sans-serif;
+    background-color: #180b0b;
+    border: 1px solid #FFFFFF;
+    transition: all 0.3s ease-in;
+    color: #FFFFFF;
+    opacity: 1;
+    margin-bottom: 114px;
+}
+
+.about_teacher:last-child{
+    margin-bottom: none;
+
+}
+
+.name_of_teacher{
+    min-width: 100px;
+    min-height: 40px;
+}
+
+.quick_start_svg{
+    width: 50px;
+    min-height: 50px;
+
+}
+
+.sponsors_logo{
+    min-width: 80px;
+    min-height: 40px;
+
+} 
+
+.header_main_logo{
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.name_of_teacher{
+    display: none;
+}
+
+.the_first_info_footer, .main_info, .head_block .title, .computer_main_text{
+    font-size: 38px;
+}
+
+.footer{
+    padding-top: 40px;
+}
+}    
