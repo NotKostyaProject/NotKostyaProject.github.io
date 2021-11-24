@@ -587,6 +587,12 @@ header .btn:hover{
     align-items: center;    
 }
 
+.email:focus-visible{
+    border-width: none;
+    border: none;
+    border-radius: none;
+}
+
 .footer_button{
     cursor: pointer;
     width: 160px;
@@ -906,7 +912,7 @@ header .btn:hover{
     }
 
     .main_info{
-        margin: 200px 0 80px 0;    
+        margin: 150px 0px 80px;
         font-family: "Roboto";
         font-style: normal;
         font-weight: bold;
@@ -1016,8 +1022,9 @@ header .btn:hover{
 
     .quick_start{
         display: flex;
+        text-align: left;
         align-items: flex-end;
-        justify-content: center;
+
     }
 
     .under_head_block{
@@ -1037,12 +1044,18 @@ header .btn:hover{
         margin: 150px 0px 0px 0px ;
     }
 
+    .main_info{
+        margin: 150px 0px 80px 0px;
+    }
+
     .sponsors_block{
         padding: 0px;
     }
 
     .sponsors_block_main{
         padding: 0px;
+        display: flex;
+        align-items: flex-end;
     }
 
     .contestants{
@@ -1123,7 +1136,8 @@ header .btn:hover{
     }
     
     .sponsors_block_text{
-        font-size: 38px;
+        text-align: left;
+        font-size: 30px;
     }
 
     .under_computer_block_the_second_block{
