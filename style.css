@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-*, body, html, head{
-    transition: all 0.3s linear !important;
-}
-
 body{
     background-color: #180b0b;
 }
@@ -79,6 +75,7 @@ header .btn:hover{
     background: url(assets/main-screen__bgc.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     padding: 270px 32px 218px 32px;
     
 }
@@ -762,6 +759,14 @@ header .btn:hover{
         align-items: flex-end;
     }
 
+    header .btn{
+        display: none;
+    }
+
+    header .navigation{
+        column-gap: 24px;
+    }
+
     .header_main_logo{
         min-width: 50px;
         min-height: 50px;
@@ -803,12 +808,6 @@ header .btn:hover{
         margin-bottom: 20px;
     }
 
-    header .navigation, header .btn, .nav_link{
-        font-size: 0px;
-        z-index: -1000;
-        background: none;
-    }
-
     .computer {
         flex-direction: column-reverse;
         row-gap: 32px;
@@ -821,12 +820,6 @@ header .btn:hover{
         padding-top: 0;   
     }
 
-    header .navigation, header .btn, .nav_link{
-        font-size: 0px;
-        display: none;
-        z-index: -1000;
-    }
-
     .quick_start{
         display: flex;
         align-items: flex-end;
@@ -834,7 +827,7 @@ header .btn:hover{
 
     .under_head_block{
         padding: 40px 32px 20px 32px;
-        height: 150px  !important
+        height: 150px;
     }
 
     .head_block{
@@ -855,6 +848,10 @@ header .btn:hover{
 }
 
 @media (min-width: 882px) and (max-width: 991px){
+
+    header .navigation{
+        column-gap: 40px;
+    }
 
     .under_head_block{
         background-color:#201c1c ;
@@ -887,10 +884,8 @@ header .btn:hover{
         min-height: 50px;
     }
 
-    header .navigation, header .btn, .nav_link{
-        font-size: 0px;
+    button.btn{
         display: none;
-        z-index: -1000;
     }
 
     .our_teachers{
@@ -1181,10 +1176,12 @@ header .btn:hover{
         min-height: 50px;
     }
 
-    header .navigation, header .btn, .nav_link{
-        font-size: 0px;
+    button.btn{
         display: none;
-        z-index: -1000;
+    }
+
+    header .navigation{
+        column-gap: 40px;
     }
 
     .our_teachers{
@@ -1457,10 +1454,8 @@ header .btn:hover{
         min-height: 50px;
     }
 
-    header .navigation, header .btn, .nav_link{
-        font-size: 0px;
+    header .btn, header .navigation{
         display: none;
-        z-index: -1000;
     }
 
     .our_teachers{

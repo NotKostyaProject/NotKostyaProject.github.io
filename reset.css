@@ -32,7 +32,6 @@ dd {
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-  scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   font-style: normal;
   font-weight: normal;
@@ -101,13 +100,10 @@ html, body {
   scrollbar-width: 8px;
 }
 
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+*, html{
+  scroll-behavior: smooth;
 }
 
+input, select{
+  outline: none;
+}
