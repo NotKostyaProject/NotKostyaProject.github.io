@@ -77,7 +77,28 @@ header .btn:hover{
     background-size: cover;
     background-attachment: fixed;
     padding: 270px 32px 218px 32px;
-    
+}
+
+.burger_menu{
+    display: none;
+}
+
+.burger{
+    cursor: pointer;
+    width: 50px;
+    display: none;
+}
+
+.navigation_burger{
+    display: flex;
+    justify-content: flex-start;
+    padding: 32px 0 0 32px;
+    row-gap: 18px;
+    align-items: flex-start;
+    background-color: ivory;
+    font-weight: 700;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .head_block .title{
@@ -1448,7 +1469,30 @@ header .btn:hover{
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
+/*
+    .burger_menu{
+        position: fixed;
+        display: flex;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10000;
+    }
+    
+    .navigation_burger{
+        opacity: .9;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: ivory;
+    }
 
+    .burder{
+        display: flex
+    }    
+*/
     .header_main_logo{
         min-width: 50px;
         min-height: 50px;
