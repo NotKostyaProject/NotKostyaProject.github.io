@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="ICON" href="assets/site_logo.svg" type="picture">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <script defer src="script.js"></script>
     <title>PC-Course.com</title>
 </head>
 
 <body>
     <div class="page_wraper">
-        <header>
+        <header id="header">
             <div class="header_wraper">
                  <svg class="header_main_logo" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_10103:6)">
@@ -49,20 +50,20 @@
                     <a class="nav_link" href="#footer">Контакты</a>
                 </nav>
                 <button class="btn">Зайти в кабинет</button>
-                <svg class="burger" width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <image width="96" height="96" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABHNCSVQICAgIfAhkiAAAAHhJREFUeJzt27ENwDAMBDEn+++sLGHkCpETCLj2dQ4AALDNMzNTH7HZWx+wnQAxAWICxASICRATAAAAAAAAAAAAAAAu8SMWs46OCRATICZATICYADEBAAAAAAAAAAAAAOASP2Ix6+iYADEBYgLEBIgJEBMAAADgZx8yFgwiPVQVWAAAAABJRU5ErkJggg==" id="img_1" />
-                    </defs>
-                    <use xlink:href="#img_1" fill="#FFFFFF" stroke="none" /></svg>
-                    <div class="burger_menu">
-                        <nav class="navigation_burger">
-                            <a class="nav_link" href="#we">О нас</a>
-                            <a class="nav_link" href="#computer">Курсы</a>
-                            <a class="nav_link" href="#under_computer_block">Расписание</a>
-                            <a class="nav_link" href="#our_teachers">Преподаватели</a>
-                            <a class="nav_link" href="#footer">Контакты</a>
-                        </nav>
-                    </div>
+                <button class="burger" id="burger_btn">
+                    <span class="burger_line"></span>
+                    <span class="burger_line burger_line_hidden"></span>
+                    <span class="burger_line"></span>
+                </button>
+                <div class="burger_menu" id="burger_mene">
+                    <nav class="navigation_burger">
+                        <a class="nav_link" href="#we">О нас</a>
+                        <a class="nav_link" href="#computer">Курсы</a>
+                        <a class="nav_link" href="#under_computer_block">Расписание</a>
+                        <a class="nav_link" href="#our_teachers">Преподаватели</a>
+                        <a class="nav_link" href="#footer">Контакты</a>
+                    </nav>
+                </div>
             </div>
         </header>
 
@@ -130,7 +131,7 @@
             <div class="square">
                 <img class="computer_photo" alt="computer" src="assets/computer.png" ></img>
             </div>
-            <div class="computer_text" data-aos="fade-left">
+            <div class="computer_text" data-aos="fade-up"">
                 <div class="computer_main_text">Чем мы занимаемся?</div>
                 <div class="computer_second_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget neque,
                     dignissim et feugiat elit augue in suspendisse egestas. Dictum vestibulum mi et sed nunc, orci
@@ -201,7 +202,7 @@
     <div class="wrapper">
       <div class="main_info">Получите профессию прямо сейчас</div>
         <div class="profession">
-                <div class="block_of_proffession" data-aos="fade-right">
+                <div class="block_of_proffession" data-aos="fade-up">
                     <div class="photo_of_profession">
                         <svg width="108" height="102" viewBox="0 0 108 102" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d_10112_2)">
@@ -320,7 +321,7 @@
                     <div class="description_for_profession">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus eget velit quisque accumsan amet tortor. Velit, volutpat egestas fringilla mi porttitor tempus. Placerat dui.</div>
                 </div>
 
-                <div class="block_of_proffession" data-aos="fade-left">
+                <div class="block_of_proffession" data-aos="fade-up">
                     <div class="photo_of_profession">
                         <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.375 9.375H12.5V12.5H9.375V9.375Z" fill="url(#paint0_linear_10112_21)"/>

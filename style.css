@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 body{
-    background-color: #180b0b;
+    background-image: url(assets/temp.png);
+    background-attachment: fixed;
 }
 
 .page_wraper{
@@ -18,8 +19,10 @@ header{
     max-width: 1920px;
     width: 100%;
     padding: 0 32px;
-    position: absolute;
+    position: fixed;
     top: 0;
+    transition: background-color 0.3s;
+    z-index: 99;
 }
 
 .header_wraper{
@@ -29,7 +32,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 48px 0;
+    padding: 24px 0;
 }
 
 
@@ -79,17 +82,58 @@ header .btn:hover{
     padding: 270px 32px 218px 32px;
 }
 
-.burger_menu{
+.burger {
     display: none;
-}
-
-.burger{
     cursor: pointer;
-    width: 50px;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 8px 4px;
+    background: transparent;
+    z-index: 101;
+  }
+  
+  .burger_menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s;
+  }
+  
+  .burger_menu.open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .burger .burger_line {
+    display: block;
+    height: 4px;
+    width: 40px;
+    background-color: #fff;
+    transition: transform 0.5s;
+    transform-origin: center;
+  }
+  
+  .burger.open .burger_line {
+    background-color: #000;
+  }
+  
+  .burger.open .burger_line:first-child {
+    transform: rotate(45deg) translateY(10px);
+  }
+  .burger.open .burger_line:last-child {
+    transform: rotate(-45deg) translateY(-10px);
+  }
+  .burger.open .burger_line_hidden {
     display: none;
-}
-
-.navigation_burger{
+  }
+  
+  .navigation_burger {
     display: flex;
     justify-content: flex-start;
     padding: 32px 0 0 32px;
@@ -98,168 +142,164 @@ header .btn:hover{
     background-color: ivory;
     font-weight: 700;
     font-size: 22px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.head_block .title{
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .head_block .title {
     max-width: 920px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 64px;
     line-height: 140%;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-bottom: 50px;
-}
-
-.head_block .date-block{
+  }
+  
+  .head_block .date-block {
     display: flex;
     column-gap: 30px;
-    
-}
-
-.head_block .date-block .date{
+  }
+  
+  .head_block .date-block .date {
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
-    background-color:  #121212;
-    
-}
-
-.head_block .date-block .date .date_number{
-    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+  }
+  
+  .head_block .date-block .date .date_number {
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
     line-height: 140%;
-    color: #FFFFFF;
-}
-
-.head_block .date-block .date .date_description{
-    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+  }
+  
+  .head_block .date-block .date .date_description {
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 140%;
     text-align: center;
-    color: #FFFFFF; 
-    opacity: 0.4; 
-}
-
-.under_head_block{
-    background-color:#201c1c ;
+    color: #ffffff;
+    opacity: 0.4;
+  }
+  
+  .under_head_block {
+    background-color: #201c1c;
     padding: 44px 32px;
-}
-
-.under_head_inner_block{
+  }
+  
+  .under_head_inner_block {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     column-gap: 81px;
-}
-
-.bought_course{
+  }
+  
+  .bought_course {
     cursor: pointer;
     padding: 10px 30px;
     max-width: 180px;
     max-height: 44px;
-    background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
+    background: linear-gradient(94.78deg, #df5950 11.19%, #451046 93.72%);
     border-radius: 50px;
     text-align: center;
-    color: #FFFFFF;
-    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 16px;
     line-height: 150%;
-}
-
-.bought_course:hover{
+  }
+  
+  .bought_course:hover {
     background: linear-gradient(94.78deg, #a53830 11.19%, #3c093d 93.72%);
-}
-
-
-.under_head_block .contestants{
-    min-width: 252px;    
-}
-
-.under_head_block .type_of_contestants{
+  }
+  
+  .under_head_block .contestants {
+    min-width: 252px;
+  }
+  
+  .under_head_block .type_of_contestants {
     display: flex;
     justify-content: space-between;
-}
-
-.under_head_block .type_of_contestants .done_course_contestnts{
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  .under_head_block .type_of_contestants .done_course_contestnts {
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 150%;
-    color: #FFFFFF;
+    color: #ffffff;
     opacity: 0.4;
-
-}
-
-.under_head_block .type_of_contestants .all_contestnts{
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  .under_head_block .type_of_contestants .all_contestnts {
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 150%;
-    color: #FFFFFF;
-}
-.under_head_block .money_line_block {
+    color: #ffffff;
+  }
+  .under_head_block .money_line_block {
     flex-grow: 1;
-}
-
-.under_head_block .money_line {
+  }
+  
+  .under_head_block .money_line {
     height: 6px;
-    background: #FFFFFF;   
-    position: relative; 
-}
-
-.under_head_block .money_line .value {
+    background: #ffffff;
+    position: relative;
+  }
+  
+  .under_head_block .money_line .value {
     position: absolute;
     left: 0;
     height: 100%;
     width: 60%;
-    background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
-}
-
-
-.under_head_block .money_block {
+    background: linear-gradient(94.78deg, #df5950 11.19%, #451046 93.72%);
+  }
+  
+  .under_head_block .money_block {
     display: flex;
     justify-content: space-between;
-}
-
-.under_head_block .money_block .money {
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  .under_head_block .money_block .money {
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 150%;
-    color: #FFFFFF;
+    color: #ffffff;
     opacity: 0.4;
-}
-
-.money_line_block, .done_course_contestnts_number, .money {
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  .money_line_block,
+  .done_course_contestnts_number,
+  .money {
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 150%;
-    color: #FFFFFF;
-}
-
-/*======================================================COMPUTER_____BLOCK===================*/
-
-
-.computer {
+    color: #ffffff;
+  }
+  
+  /*======================================================COMPUTER_____BLOCK===================*/
+  
+  .computer {
     max-width: 1300px;
     margin-top: 200px;
     display: flex;
     justify-content: space-between;
     column-gap: 82px;
-}
-
-.square{
+  }
+  
+  .square {
     flex-shrink: 0;
     width: 568px;
     height: 536px;
@@ -267,1900 +307,1889 @@ header .btn:hover{
     border-radius: 0px;
     border-width: 30px;
     border-style: solid;
-    border-color: linear-gradient(94.26deg, #C89AFC 9.51%, #7C6AFA 90.23%); /*не рабоатет*/
+    border-color: linear-gradient(
+      94.26deg,
+      #c89afc 9.51%,
+      #7c6afa 90.23%
+    ); /*не рабоатет*/
     border-color: rgb(190, 31, 190);
-   
-}
-
-.computer_photo{
+  }
+  
+  .computer_photo {
     transform: translate(40px, 50px);
-}
-
-.computer_text{
+  }
+  
+  .computer_text {
     padding-top: 69px;
-}
-
-.computer_main_text{
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  .computer_main_text {
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 48px;
     line-height: 140%;
-    color: #FFFFFF;
-    padding-bottom:45px ;
-    
-}
-
-.computer_second_text{
-    font-family: 'Roboto',sans-serif;
+    color: #ffffff;
+    padding-bottom: 45px;
+  }
+  
+  .computer_second_text {
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 160%;
-    color: #FFFFFF;
-}
-
-/*======================================================UNDER_____COMPUTER=================*/
-
-
-.main_info{
-    margin: 200px 0 80px 0;    
-    font-family: 'Roboto';
+    color: #ffffff;
+  }
+  
+  /*======================================================UNDER_____COMPUTER=================*/
+  
+  .main_info {
+    margin: 200px 0 80px 0;
+    font-family: "Roboto";
     font-style: normal;
     font-weight: bold;
     font-size: 48px;
     line-height: 140%;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
     justify-content: center;
     align-items: center;
     display: flex;
-}
-
-
-.profession{
+  }
+  
+  .profession {
     max-width: 1300px;
     display: flex;
     justify-content: space-between;
-}
-
-.block_of_proffession{
+  }
+  
+  .block_of_proffession {
     max-width: 360px;
-}
-
-.photo_of_profession{
+  }
+  
+  .photo_of_profession {
     text-align: center;
-}
-
-.type_of_profession{
+  }
+  
+  .type_of_profession {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 24px;
     line-height: 140%;
-    color: #FFFFFF;
-    padding: 60px 0 30px 0 ;
-    
-}
-
-.description_for_profession{
+    color: #ffffff;
+    padding: 60px 0 30px 0;
+  }
+  
+  .description_for_profession {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 160%;
-    color: #FFFFFF;
+    color: #ffffff;
     opacity: 0.8;
-}
-
-/*============================================================SPONSORS==================*/
-
-
-.sponsors_block{
+  }
+  
+  /*============================================================SPONSORS==================*/
+  
+  .sponsors_block {
     padding: 200px 0px 0px 0px;
-    
-}
-
-.sponsors_block_main{
+  }
+  
+  .sponsors_block_main {
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 48px;
     line-height: 140%;
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 0px 0px 88px 0px;
-
-}
-
-.sponsors_block_type_of_sponsors{
+  }
+  
+  .sponsors_block_type_of_sponsors {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;  
-}
-
-.sponsors_up{
+    flex-wrap: wrap;
+  }
+  
+  .sponsors_up {
     padding: 40px;
     border: solid 2px gray;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-}
-
-
-.sponsors_down{
+  }
+  
+  .sponsors_down {
     padding: 40px;
     border: solid 2px gray;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-
-}
-
-.sponsors_up_right{
+  }
+  
+  .sponsors_up_right {
     padding: 40px;
     border: solid 2px gray;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-
-}
-
-.sponsors_down_right{
+  }
+  
+  .sponsors_down_right {
     padding: 40px;
     border: solid 2px gray;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
-    
-}
-
-
-/*====================================================UNDER_COMPUTER_BLOCK=====================*/
-
-
-
-
-.under_computer_block_the_first_block{
+  }
+  
+  /*====================================================UNDER_COMPUTER_BLOCK=====================*/
+  
+  .under_computer_block_the_first_block {
     padding: 200px 0px 80px 0px;
     align-items: center;
-}
-
-.quick_start_txt{
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  .quick_start_txt {
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 48px;
     line-height: 140%;
-    color: #FFFFFF;
+    color: #ffffff;
     padding-left: 28px;
-}
-
-.quick_start_description{
+  }
+  
+  .quick_start_description {
     padding-top: 28px;
     max-width: 450px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
-    line-height: 160%;    
-    color: #FFFFFF;
-    opacity: 0.5;   
-}
-
-.under_computer_block_the_second_block{
+    line-height: 160%;
+    color: #ffffff;
+    opacity: 0.5;
+  }
+  
+  .under_computer_block_the_second_block {
     display: flex;
-}
-
-
-
-.percent{
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  .percent {
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 36px;
     line-height: 140%;
-    color: #FFFFFF;
-}
-
-.number_of_percent_100{
+    color: #ffffff;
+  }
+  
+  .number_of_percent_100 {
     padding: 20px 0 35px 0px;
-}
-
-.number_of_percent_75{
+  }
+  
+  .number_of_percent_75 {
     padding: 30px 0 45px 0px;
-}
-
-.number_of_percent_50{
+  }
+  
+  .number_of_percent_50 {
     padding: 45px 0 60px 0px;
-}
-
-.number_of_percent_conclusion{
+  }
+  
+  .number_of_percent_conclusion {
     padding: 55px 0 70px 0px;
-}
-
-
-
-.percent_description{
+  }
+  
+  .percent_description {
     max-width: 300px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 160%;
-    color: #FFFFFF;
+    color: #ffffff;
     opacity: 0.5;
-}
-
-/*========================================================TEACHERS=========================*/
-
-
-.our_teachers{
+  }
+  
+  /*========================================================TEACHERS=========================*/
+  
+  .our_teachers {
     padding: 70px 0px 28px 0px;
-}
-
-.teachers{
+  }
+  
+  .teachers {
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 48px;
     line-height: 140%;
-    color: #FFFFFF;
-}
-
-.our_teacher_block{
+    color: #ffffff;
+  }
+  
+  .our_teacher_block {
     padding-top: 114px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
-}
-
-.photo_of_teachers{
+  }
+  
+  .photo_of_teachers {
     margin: 0px auto;
-}
-
-.name{
+  }
+  
+  .name {
     padding: 40px 0px 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 24px;
     line-height: 140%;
-    color: #FFFFFF;
-    
-}
-
-.type_of_work{
-    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+  }
+  
+  .type_of_work {
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 160%;
-    color: #FFFFFF;
+    color: #ffffff;
     opacity: 0.8;
     padding-bottom: 30px;
-   
-}
-
-.about_teacher{
+  }
+  
+  .about_teacher {
     width: 144px;
     height: 44px;
     border-radius: 40px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: #180b0b;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #ffffff;
     transition: all 0.3s ease-in;
-    color: #FFFFFF;
+    color: #ffffff;
     opacity: 1;
-}
-
-.about_teacher:hover{
+  }
+  
+  .about_teacher:hover {
     opacity: 0.4;
     border: 1px solid #867575;
-}
-
-/*======================================================FOTER===============================*/
-
-
-.footer{
+  }
+  
+  /*======================================================FOTER===============================*/
+  
+  .footer {
     padding-top: 200px;
     margin: 0 auto;
     max-width: 550px;
     text-align: center;
-}
-
-.the_first_info_footer{
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  .the_first_info_footer {
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 48px;
     line-height: 140%;
-    color: #FFFFFF;
+    color: #ffffff;
     padding-bottom: 30px;
-}
-
-.the_second_info_footer{
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  .the_second_info_footer {
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 160%;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
     opacity: 0.5;
     padding-bottom: 60px;
-}
-
-.footer_input_button{
+  }
+  
+  .footer_input_button {
     display: flex;
     padding-bottom: 56px;
-
-}
-
-.email{
+  }
+  
+  .email {
     width: 75%;
     height: 50px;
     background: #ffffff34;
     border-radius: 50px;
     border: none;
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     letter-spacing: 1px;
     padding-left: 26px;
-    align-items: center;    
-}
-
-.email:focus-visible{
+    align-items: center;
+  }
+  
+  .email:focus-visible {
     border-width: none;
     border: none;
     border-radius: none;
-}
-
-.footer_button{
+  }
+  
+  .footer_button {
     cursor: pointer;
     width: 160px;
     height: 50px;
-    background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
+    background: linear-gradient(94.78deg, #df5950 11.19%, #451046 93.72%);
     border-radius: 50px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     letter-spacing: 1px;
     color: white;
     padding: 0 auto;
     transform: translateX(-40px);
-}
-
-.footer_button:hover{
+  }
+  
+  .footer_button:hover {
     background: linear-gradient(94.78deg, #c43c32 11.19%, #3b0a3b 93.72%);
-}
-
-.links{
+  }
+  
+  .links {
     display: flex;
     column-gap: 30px;
     justify-content: center;
     align-items: center;
-}
-
-.footer_svg{
+  }
+  
+  .footer_svg {
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(94.26deg, #C89AFC 9.51%, #7C6AFA 90.23%);
+    background: linear-gradient(94.26deg, #c89afc 9.51%, #7c6afa 90.23%);
     border-radius: 100px;
     width: 50px;
     height: 50px;
     transition: all 0.3s ease-in-out;
-    
-}
-
-.footer_svg:hover{
+  }
+  
+  .footer_svg:hover {
     background: linear-gradient(94.26deg, #7a4caf 9.51%, #4231b6 90.23%);
-}
-
-.special_info_footer{
+  }
+  
+  .special_info_footer {
     padding-top: 50px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 20px;
     line-height: 160%;
     opacity: 0.8;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
-}
-
-.kostya{
-    font-family: 'Roboto', sans-serif;
+  }
+  
+  .kostya {
+    font-family: "Roboto", sans-serif;
     font-style: bold;
     padding-left: 15px;
     cursor: pointer;
-    color: rgb(24, 147, 158); 
-}
-
-.kostya:hover{
-    color: rgb(255, 251, 0);    
-}
-
-@media (min-width: 1200px) and (max-width: 1360px){
-    header{
-        padding-right: 60px;
+    color: rgb(24, 147, 158);
+  }
+  
+  .kostya:hover {
+    color: rgb(255, 251, 0);
+  }
+  
+  @media (min-width: 1200px) and (max-width: 1360px) {
+    header {
+      padding-right: 60px;
     }
-
-    .profession, .under_computer_block{
-        padding: 0 32px;
+  
+    .profession,
+    .under_computer_block {
+      padding: 0 32px;
     }
-
-    .number_of_percent_100{
-        padding: 20px 0 35px 0px;
+  
+    .number_of_percent_100 {
+      padding: 20px 0 35px 0px;
     }
-    
-    .number_of_percent_75{
-        padding: 29px 0 44px 0px;
+  
+    .number_of_percent_75 {
+      padding: 29px 0 44px 0px;
     }
-    
-    .number_of_percent_50{
-        padding: 43px 0 56px 0px;
+  
+    .number_of_percent_50 {
+      padding: 43px 0 56px 0px;
     }
-    
-    .number_of_percent_conclusion{
-        padding: 52px 0 65px 0px;
+  
+    .number_of_percent_conclusion {
+      padding: 52px 0 65px 0px;
     }
-
-    .percent_description{
-        max-width: 276px;
+  
+    .percent_description {
+      max-width: 276px;
     }
-
-    .sponsors_block{
-        padding: 200px 32px;
+  
+    .sponsors_block {
+      padding: 200px 32px;
     }
-
-}
-
-@media (min-width: 992px) and (max-width: 1199px){
-
-    .number_of_percent_100{
-        padding: 20px 0 35px 0px;
+  }
+  
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .number_of_percent_100 {
+      padding: 20px 0 35px 0px;
     }
-    
-    .number_of_percent_75{
-        padding: 28px 0 43px 0px;
+  
+    .number_of_percent_75 {
+      padding: 28px 0 43px 0px;
     }
-    
-    .number_of_percent_50{
-        padding: 40px 0 55px 0px;
+  
+    .number_of_percent_50 {
+      padding: 40px 0 55px 0px;
     }
-    
-    .number_of_percent_conclusion{
-        padding: 48px 0 63px 0px;
+  
+    .number_of_percent_conclusion {
+      padding: 48px 0 63px 0px;
     }
-
-    .percent_description{
-        max-width: 250px;
+  
+    .percent_description {
+      max-width: 250px;
     }
-
-    button.btn{
-        display: none;
+  
+    button.btn {
+      display: none;
     }
-
-    .nav_link{
-        margin-left: 20px;
+  
+    .nav_link {
+      margin-left: 20px;
     }
-
-    .computer_text{
-        padding: 0;
+  
+    .computer_text {
+      padding: 0;
     }
-
-    .name_of_teacher{
-        transform: translateY(40px);
+  
+    .name_of_teacher {
+      transform: translateY(40px);
     }
-    
-    .under_computer_block, .computer, .profession{
-        padding: 0 32px;
+  
+    .under_computer_block,
+    .computer,
+    .profession {
+      padding: 0 32px;
     }
-
-    .sponsors_block{
-        padding: 200px 32px;
+  
+    .sponsors_block {
+      padding: 200px 32px;
     }
-}
-
-@media (min-width: 768px) and (max-width: 858px){
-
-    .name_of_teacher{
-        transform: translateY(40px);
+  }
+  
+  @media (min-width: 768px) and (max-width: 858px) {
+    .name_of_teacher {
+      transform: translateY(40px);
     }
-
-    .teachers{
-        display: flex;
-        align-items: flex-start;
+  
+    .teachers {
+      display: flex;
+      align-items: flex-start;
     }
-
-    .under_head_inner_block{
-        margin-top: -28px;
+  
+    .under_head_inner_block {
+      margin-top: -28px;
     }
-
-    .money_line_block{
-       transform: translateY(5px);
+  
+    .money_line_block {
+      transform: translateY(5px);
     }
-    
-    .sponsors_block_main{
-        padding: 0px;
-        display: flex;
-        align-items: flex-end;
+  
+    .sponsors_block_main {
+      padding: 0px;
+      display: flex;
+      align-items: flex-end;
     }
-
-    header .btn{
-        display: none;
+  
+    header .btn {
+      display: none;
     }
-
-    header .navigation{
-        column-gap: 24px;
+  
+    header .navigation {
+      column-gap: 24px;
     }
-
-    .header_main_logo{
-        min-width: 50px;
-        min-height: 50px;
+  
+    .header_main_logo {
+      min-width: 50px;
+      min-height: 50px;
     }
-
-    .head_block{
-        padding: 170px 32px 180px 32px;
+  
+    .head_block {
+      padding: 170px 32px 180px 32px;
     }
-    
-    .date-block{
-        margin-top: 40px;
+  
+    .date-block {
+      margin-top: 40px;
     }
-
-    .number_of_percent_100{
-        padding: 20px 0 35px 0px;
+  
+    .number_of_percent_100 {
+      padding: 20px 0 35px 0px;
     }
-    
-    .number_of_percent_75{
-        padding: 25.5px 0 40.5px 0px;
+  
+    .number_of_percent_75 {
+      padding: 25.5px 0 40.5px 0px;
     }
-    
-    .number_of_percent_50{
-        padding: 33.5px 0 49px 0px;
+  
+    .number_of_percent_50 {
+      padding: 33.5px 0 49px 0px;
     }
-    
-    .number_of_percent_conclusion{
-        padding: 38.5px 0 55px 0px;
+  
+    .number_of_percent_conclusion {
+      padding: 38.5px 0 55px 0px;
     }
-
-    .percent_description{
-        max-width: 140px;
+  
+    .percent_description {
+      max-width: 140px;
     }
-
-    .bought_course{
-        margin-bottom: 20px;
+  
+    .bought_course {
+      margin-bottom: 20px;
     }
-
-    .contestants{
-        margin-bottom: 20px;
+  
+    .contestants {
+      margin-bottom: 20px;
     }
-
+  
     .computer {
-        flex-direction: column-reverse;
-        row-gap: 32px;
-        column-gap: 32px;
-        margin-top: 32px;
-        padding: 0 32px;
+      flex-direction: column-reverse;
+      row-gap: 32px;
+      column-gap: 32px;
+      margin-top: 32px;
+      padding: 0 32px;
     }
-
-    .computer_text{
-        padding-top: 0;   
+  
+    .computer_text {
+      padding-top: 0;
     }
-
-    .quick_start{
-        display: flex;
-        align-items: flex-end;
+  
+    .quick_start {
+      display: flex;
+      align-items: flex-end;
     }
-
-    .under_head_block{
-        padding: 40px 32px 20px 32px;
-        height: 150px;
+  
+    .under_head_block {
+      padding: 40px 32px 20px 32px;
+      height: 150px;
     }
-
-    .head_block{
-        padding: 160px 32px 108px 32px;
+  
+    .head_block {
+      padding: 160px 32px 108px 32px;
     }
-
-    .under_computer_block_the_first_block{
-        padding: 0px 0px 80px 0px;
+  
+    .under_computer_block_the_first_block {
+      padding: 0px 0px 80px 0px;
     }
-
-    .under_computer_block{
-        padding: 0 32px;
+  
+    .under_computer_block {
+      padding: 0 32px;
     }
-
-    .computer_main_text, .quick_start, .main_info, .sponsors_block_text, .name_of_our_teachers{
-        margin: 80px 0px 0px 0px ;
+  
+    .computer_main_text,
+    .quick_start,
+    .main_info,
+    .sponsors_block_text,
+    .name_of_our_teachers {
+      margin: 80px 0px 0px 0px;
     }
-}
-
-@media (min-width: 882px) and (max-width: 991px){
-
-    header .navigation{
-        column-gap: 40px;
+  }
+  
+  @media (min-width: 882px) and (max-width: 991px) {
+    header .navigation {
+      column-gap: 40px;
     }
-
-    .under_head_block{
-        background-color:#201c1c ;
-        padding: 20px 32px 44px 32px;
-        height: 150px;
+  
+    .under_head_block {
+      background-color: #201c1c;
+      padding: 20px 32px 44px 32px;
+      height: 150px;
     }
-
-    .money_line_block{
-        transform: translateY(6px);
+  
+    .money_line_block {
+      transform: translateY(6px);
     }
-
-    .number_of_percent_100{
-        padding: 20px 0 20px 0px;
+  
+    .number_of_percent_100 {
+      padding: 20px 0 20px 0px;
     }
-
-    .number_of_percent_75{
-        padding: 30px 0 30px 0px;
+  
+    .number_of_percent_75 {
+      padding: 30px 0 30px 0px;
     }
-    
-    .number_of_percent_50{
-        padding: 20px 0 20px 0px;
+  
+    .number_of_percent_50 {
+      padding: 20px 0 20px 0px;
     }
-    
-    .number_of_percent_conclusion{
-        padding: 30px 0 30px 0px;
+  
+    .number_of_percent_conclusion {
+      padding: 30px 0 30px 0px;
     }
-    
-    .header_main_logo{
-        min-width: 50px;
-        min-height: 50px;
+  
+    .header_main_logo {
+      min-width: 50px;
+      min-height: 50px;
     }
-
-    button.btn{
-        display: none;
+  
+    button.btn {
+      display: none;
     }
-
-    .our_teachers{
-        padding: 70px 0px 28px 0px;
+  
+    .our_teachers {
+      padding: 70px 0px 28px 0px;
     }
-    
-    .teachers{
-        display: flex;
-        align-items: center;
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
-        font-size: 48px;
-        line-height: 140%;
-        color: #FFFFFF;
+  
+    .teachers {
+      display: flex;
+      align-items: center;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 140%;
+      color: #ffffff;
     }
-    
-    .our_teacher_block{
-        padding-top: 114px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
+  
+    .our_teacher_block {
+      padding-top: 114px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
     }
-    
-    .photo_of_teachers{
-        margin: 0px auto;
-        width: 80%;
-        height: 80%;
+  
+    .photo_of_teachers {
+      margin: 0px auto;
+      width: 80%;
+      height: 80%;
     }
-    
-    .name{
-        padding: 40px 0px 14px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 140%;
-        color: #FFFFFF;
-        
+  
+    .name {
+      padding: 40px 0px 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      color: #ffffff;
     }
-    
-    .type_of_work{
-        display: flex;
-        flex-wrap: wrap;
-        font-family: 'Roboto', sans-serif;
-        font-size: 12px;
-        line-height: 160%;
-        color: #FFFFFF;
-        opacity: 0.8;
-        padding-bottom: 30px;
-       
+  
+    .type_of_work {
+      display: flex;
+      flex-wrap: wrap;
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 160%;
+      color: #ffffff;
+      opacity: 0.8;
+      padding-bottom: 30px;
     }
-    
-    .about_teacher{
-        width: 144px;
-        height: 44px;
-        border-radius: 40px;
-        font-family: 'Roboto', sans-serif;
-        background-color: #180b0b;
-        border: 1px solid #FFFFFF;
-        transition: all 0.3s ease-in;
-        color: #FFFFFF;
-        opacity: 1;
+  
+    .about_teacher {
+      width: 144px;
+      height: 44px;
+      border-radius: 40px;
+      font-family: "Roboto", sans-serif;
+      background-color: #180b0b;
+      border: 1px solid #ffffff;
+      transition: all 0.3s ease-in;
+      color: #ffffff;
+      opacity: 1;
     }
-    
-    .sponsors_block_text{
-        font-size: 38px;
+  
+    .sponsors_block_text {
+      font-size: 38px;
     }
-
-    .under_computer_block_the_second_block{
-        flex-wrap: wrap;
-        flex-grow: 1;
+  
+    .under_computer_block_the_second_block {
+      flex-wrap: wrap;
+      flex-grow: 1;
     }
-
-    .percent_description{
-        padding-bottom: 30px;
+  
+    .percent_description {
+      padding-bottom: 30px;
     }
-
-    .computer_photo{
-        transform: translate(26px, 90px);
-        width: 90%;
-        height: 90%;
+  
+    .computer_photo {
+      transform: translate(26px, 90px);
+      width: 90%;
+      height: 90%;
     }
-
-    .square{
-        flex-shrink: 0;
-        width: 468px;
-        height: 436px;
-        background-color: none;
-        border-radius: 0px;
-        border-width: 30px;
-        border-style: solid;
-        border-color: linear-gradient(94.26deg, #C89AFC 9.51%, #7C6AFA 90.23%); /*не рабоатет*/
-        border-color: rgb(190, 31, 190);       
+  
+    .square {
+      flex-shrink: 0;
+      width: 468px;
+      height: 436px;
+      background-color: none;
+      border-radius: 0px;
+      border-width: 30px;
+      border-style: solid;
+      border-color: linear-gradient(
+        94.26deg,
+        #c89afc 9.51%,
+        #7c6afa 90.23%
+      ); /*не рабоатет*/
+      border-color: rgb(190, 31, 190);
     }
-
-    .head_block .title{
-        font-family: 'Roboto', sans-serif;
-        font-size: 52px;
-        font-weight: bold;
-        line-height: 140%;
-        color: #FFFFFF;
-        margin-bottom: 50px;
+  
+    .head_block .title {
+      font-family: "Roboto", sans-serif;
+      font-size: 52px;
+      font-weight: bold;
+      line-height: 140%;
+      color: #ffffff;
+      margin-bottom: 50px;
     }
-
-    .bought_course{
-        margin-bottom: 20px;
+  
+    .bought_course {
+      margin-bottom: 20px;
     }
-
+  
     .computer {
-        flex-direction: column-reverse;
-        row-gap: 32px;
-        column-gap: 32px;
-        margin-top: 32px;
-        padding: 0 32px;
+      flex-direction: column-reverse;
+      row-gap: 32px;
+      column-gap: 32px;
+      margin-top: 32px;
+      padding: 0 32px;
     }
-
-    .computer_text{
-        padding-top: 0;
-    }   
-
-    .head_block .date-block{
-        display: flex;
-        column-gap: 30px;
-        flex-wrap: wrap;        
+  
+    .computer_text {
+      padding-top: 0;
     }
-
-    .head_block .date-block .date{
-        margin-top: 20px;
-        width: 105px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+  
+    .head_block .date-block {
+      display: flex;
+      column-gap: 30px;
+      flex-wrap: wrap;
     }
-
-    .main_info{
-        margin: 150px 0 80px 0;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: bold;
-        font-size: 48px;
-        line-height: 140%;
-        color: #FFFFFF;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        display: flex;
+  
+    .head_block .date-block .date {
+      margin-top: 20px;
+      width: 105px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-    
-    
-    .profession{
-        max-width: 1300px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-grow: 1;
+  
+    .main_info {
+      margin: 150px 0 80px 0;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 140%;
+      color: #ffffff;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      display: flex;
     }
-    
-    .block_of_proffession{
-        max-width: 360px;
-        margin: 0 auto;
+  
+    .profession {
+      max-width: 1300px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-grow: 1;
     }
-    
-    .photo_of_profession{
-        margin: 0 auto;
+  
+    .block_of_proffession {
+      max-width: 360px;
+      margin: 0 auto;
     }
-    
-    .type_of_profession{
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 140%;
-        color: #FFFFFF;
-        padding: 60px 0 30px 0 ;
-        
+  
+    .photo_of_profession {
+      margin: 0 auto;
     }
-    
-    .description_for_profession{
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        line-height: 160%;
-        color: #FFFFFF;
-        opacity: 0.8;
-        margin-bottom: 80px;
+  
+    .type_of_profession {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 140%;
+      color: #ffffff;
+      padding: 60px 0 30px 0;
     }
-
-    .quick_start_svg{
-        width: 60px;
-        min-height: 50px;
+  
+    .description_for_profession {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 160%;
+      color: #ffffff;
+      opacity: 0.8;
+      margin-bottom: 80px;
     }
-    
-    .bought_course{
-        margin-bottom: 25px;
+  
+    .quick_start_svg {
+      width: 60px;
+      min-height: 50px;
     }
-    
-    .teachers{
-        font-size: 38px;
-        margin: 0 auto;
-        text-align: center;
+  
+    .bought_course {
+      margin-bottom: 25px;
     }
-
-    .name_of_teacher{
-        display: none;
+  
+    .teachers {
+      font-size: 38px;
+      margin: 0 auto;
+      text-align: center;
     }
-
-    .computer_main_text, .quick_start, .sponsors_block_text, .name_of_our_teachers{
-        margin: 80px 0px 0px 0px ;
+  
+    .name_of_teacher {
+      display: none;
     }
-
-    .name_of_our_teachers{
-        font-size: 38px;
-        margin: 80px auto 0 auto;
-        text-align: center;
-        align-items: center;
+  
+    .computer_main_text,
+    .quick_start,
+    .sponsors_block_text,
+    .name_of_our_teachers {
+      margin: 80px 0px 0px 0px;
     }
-
-    .our_teacher_block{
-        padding: 56px 0 0 0;
+  
+    .name_of_our_teachers {
+      font-size: 38px;
+      margin: 80px auto 0 auto;
+      text-align: center;
+      align-items: center;
     }
-
-    .sponsors_block{
-        padding: 0px;
+  
+    .our_teacher_block {
+      padding: 56px 0 0 0;
     }
-
-    .sponsors_block_main{
-        padding: 0 32px;
-        display: flex;
-        align-items: flex-end;
+  
+    .sponsors_block {
+      padding: 0px;
     }
-
-    .sponsors_block_type_of_sponsors{
-        padding: 0 32px;
+  
+    .sponsors_block_main {
+      padding: 0 32px;
+      display: flex;
+      align-items: flex-end;
     }
-
-    .quick_start{
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
+  
+    .sponsors_block_type_of_sponsors {
+      padding: 0 32px;
     }
-
-    .head_block{
-        padding: 160px 32px 108px 32px;
+  
+    .quick_start {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
     }
-
-    .under_computer_block{
-        padding: 0 32px;
+  
+    .head_block {
+      padding: 160px 32px 108px 32px;
     }
-
-    .under_computer_block_the_first_block{
-        padding: 0px 0px 80px 0px;
+  
+    .under_computer_block {
+      padding: 0 32px;
     }
-
-    .under_head_block{
-        padding: 40.5px 32px;
+  
+    .under_computer_block_the_first_block {
+      padding: 0px 0px 80px 0px;
     }
-
-    .bought_course{
-        transform: translateY(13px);
+  
+    .under_head_block {
+      padding: 40.5px 32px;
     }
-
-    .type_of_profession{
-        padding: 20px 0 30px 0 ;
+  
+    .bought_course {
+      transform: translateY(13px);
     }
-}
-
-@media (min-width: 859px) and (max-width: 881px){
-
-    .number_of_percent_100{
-        padding: 20px 0 20px 0px;
+  
+    .type_of_profession {
+      padding: 20px 0 30px 0;
     }
-
-    .number_of_percent_75{
-        padding: 30px 0 30px 0px;
+  }
+  
+  @media (min-width: 859px) and (max-width: 881px) {
+    .number_of_percent_100 {
+      padding: 20px 0 20px 0px;
     }
-    
-    .number_of_percent_50{
-        padding: 20px 0 20px 0px;
+  
+    .number_of_percent_75 {
+      padding: 30px 0 30px 0px;
     }
-    
-    .number_of_percent_conclusion{
-        padding: 30px 0 30px 0px;
+  
+    .number_of_percent_50 {
+      padding: 20px 0 20px 0px;
     }
-    
-    .header_main_logo{
-        min-width: 50px;
-        min-height: 50px;
+  
+    .number_of_percent_conclusion {
+      padding: 30px 0 30px 0px;
     }
-
-    button.btn{
-        display: none;
+  
+    .header_main_logo {
+      min-width: 50px;
+      min-height: 50px;
     }
-
-    header .navigation{
-        column-gap: 40px;
+  
+    button.btn {
+      display: none;
     }
-
-    .our_teachers{
-        padding: 70px 0px 28px 0px;
+  
+    header .navigation {
+      column-gap: 40px;
     }
-    
-    .teachers{
-        display: flex;
-        align-items: center;
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
-        font-size: 48px;
-        line-height: 140%;
-        color: #FFFFFF;
+  
+    .our_teachers {
+      padding: 70px 0px 28px 0px;
     }
-    
-    .our_teacher_block{
-        padding-top: 114px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
+  
+    .teachers {
+      display: flex;
+      align-items: center;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 140%;
+      color: #ffffff;
     }
-    
-    .photo_of_teachers{
-        margin: 0px auto;
-        width: 80%;
-        height: 80%;
+  
+    .our_teacher_block {
+      padding-top: 114px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
     }
-    
-    .name{
-        padding: 40px 0px 14px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 140%;
-        color: #FFFFFF;
-        
+  
+    .photo_of_teachers {
+      margin: 0px auto;
+      width: 80%;
+      height: 80%;
     }
-    
-    .type_of_work{
-        display: flex;
-        flex-wrap: wrap;
-        font-family: 'Roboto', sans-serif;
-        font-size: 12px;
-        line-height: 160%;
-        color: #FFFFFF;
-        opacity: 0.8;
-        padding-bottom: 30px;
-       
+  
+    .name {
+      padding: 40px 0px 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      color: #ffffff;
     }
-    
-    .about_teacher{
-        width: 144px;
-        height: 44px;
-        border-radius: 40px;
-        font-family: 'Roboto', sans-serif;
-        background-color: #180b0b;
-        border: 1px solid #FFFFFF;
-        transition: all 0.3s ease-in;
-        color: #FFFFFF;
-        opacity: 1;
+  
+    .type_of_work {
+      display: flex;
+      flex-wrap: wrap;
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 160%;
+      color: #ffffff;
+      opacity: 0.8;
+      padding-bottom: 30px;
     }
-    
-    .sponsors_block_text{
-        font-size: 38px;
+  
+    .about_teacher {
+      width: 144px;
+      height: 44px;
+      border-radius: 40px;
+      font-family: "Roboto", sans-serif;
+      background-color: #180b0b;
+      border: 1px solid #ffffff;
+      transition: all 0.3s ease-in;
+      color: #ffffff;
+      opacity: 1;
     }
-
-    .under_computer_block_the_second_block{
-        flex-wrap: wrap;
-        flex-grow: 1;
+  
+    .sponsors_block_text {
+      font-size: 38px;
     }
-
-    .percent_description{
-        padding-bottom: 30px;
+  
+    .under_computer_block_the_second_block {
+      flex-wrap: wrap;
+      flex-grow: 1;
     }
-
-    .computer_photo{
-        transform: translate(26px, 90px);
-        width: 90%;
-        height: 90%;
+  
+    .percent_description {
+      padding-bottom: 30px;
     }
-
-    .square{
-        flex-shrink: 0;
-        width: 468px;
-        height: 436px;
-        background-color: none;
-        border-radius: 0px;
-        border-width: 30px;
-        border-style: solid;
-        border-color: linear-gradient(94.26deg, #C89AFC 9.51%, #7C6AFA 90.23%); /*не рабоатет*/
-        border-color: rgb(190, 31, 190);       
+  
+    .computer_photo {
+      transform: translate(26px, 90px);
+      width: 90%;
+      height: 90%;
     }
-
-    .head_block .title{
-        font-family: 'Roboto', sans-serif;
-        font-size: 52px;
-        font-weight: bold;
-        line-height: 140%;
-        color: #FFFFFF;
-        margin-bottom: 50px;
+  
+    .square {
+      flex-shrink: 0;
+      width: 468px;
+      height: 436px;
+      background-color: none;
+      border-radius: 0px;
+      border-width: 30px;
+      border-style: solid;
+      border-color: linear-gradient(
+        94.26deg,
+        #c89afc 9.51%,
+        #7c6afa 90.23%
+      ); /*не рабоатет*/
+      border-color: rgb(190, 31, 190);
     }
-
-    .bought_course{
-        margin-bottom: 20px;
+  
+    .head_block .title {
+      font-family: "Roboto", sans-serif;
+      font-size: 52px;
+      font-weight: bold;
+      line-height: 140%;
+      color: #ffffff;
+      margin-bottom: 50px;
     }
-
+  
+    .bought_course {
+      margin-bottom: 20px;
+    }
+  
     .computer {
-        flex-direction: column-reverse;
-        row-gap: 32px;
-        column-gap: 32px;
-        margin-top: 32px;
-        padding: 0 32px;
-    }
-
-    .computer_text{
-        padding-top: 0;
-    }   
-
-    .head_block .date-block{
-        display: flex;
-        column-gap: 30px;
-        flex-wrap: wrap;        
-    }
-
-    .head_block .date-block .date{
-        margin-top: 20px;
-        width: 105px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .main_info{
-        margin: 150px 0px 80px;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: bold;
-        font-size: 48px;
-        line-height: 140%;
-        color: #FFFFFF;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-    }
-    
-    
-    .profession{
-        max-width: 1300px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-grow: 1;
-    }
-    
-    .block_of_proffession{
-        max-width: 360px;
-        margin: 0 auto;
-    }
-    
-    .photo_of_profession{
-        margin: 0 auto;
-    }
-    
-    .type_of_profession{
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 140%;
-        color: #FFFFFF;
-        padding: 30px 0 20px 0 ;
-        
-    }
-    
-    .description_for_profession{
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        line-height: 160%;
-        color: #FFFFFF;
-        opacity: 0.8;
-        margin-bottom: 80px;
-    }
-
-    .quick_start_svg{
-        width: 60px;
-        min-height: 50px;
-    }
-    
-    .bought_course{
-        margin-bottom: 25px;
-    }
-    
-    .teachers{
-        font-size: 38px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .name_of_teacher{
-        display: none;
-    }
-
-    .computer_main_text, .quick_start, .main_info, .sponsors_block_text, .name_of_our_teachers{
-        margin: 80px 0px 0px 0px ;
-    }
-
-    .name_of_our_teachers{
-        font-size: 38px;
-        margin: 80px auto 0 auto;
-        text-align: center;
-        align-items: center;
-    }
-
-    .our_teacher_block{
-        padding: 56px 0 0 0;
-    }
-
-    .sponsors_block{
-        padding: 0px;
-    }
-
-    .sponsors_block_main{
-        padding: 0 32px;
-        display: flex;
-        align-items: flex-end;
-    }
-
-    .sponsors_block_type_of_sponsors{
-        padding: 0 32px;
-    }
-
-    .quick_start{
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-    }
-
-    .head_block{
-        padding: 160px 32px 108px 32px;
-    }
-
-    .under_computer_block{
-        padding: 0 32px;
-    }
-
-    .under_computer_block_the_first_block{
-        padding: 0px 0px 80px 0px;
-    }
-
-    .under_head_block{
-        background-color:#201c1c ;
-        padding: 20px 32px 44px 32px;
-        height: 150px;
-        }
-
-    .money_line_block{
-        transform: translateY(6px);
-    }
-}
-
-@media (min-width: 480px) and (max-width: 767px) {
-/*
-    .burger_menu{
-        position: fixed;
-        display: flex;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 10000;
-    }
-    
-    .navigation_burger{
-        opacity: .9;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        background-color: ivory;
-    }
-
-    .burder{
-        display: flex
-    }    
-*/
-    .header_main_logo{
-        min-width: 50px;
-        min-height: 50px;
-    }
-
-    header .btn, header .navigation{
-        display: none;
-    }
-
-    .our_teachers{
-        padding: 70px 0px 28px 0px;
-    }
-    
-    .teachers{
-        display: flex;
-        align-items: center;
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
-        font-size: 48px;
-        line-height: 140%;
-        color: #FFFFFF;
-    }
-    
-    .our_teacher_block{
-        padding-top: 114px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .photo_of_teachers{
-        margin: 0px auto;
-        width: 80%;
-        height: 80%;
-    }
-    
-    .name{
-        padding: 40px 0px 14px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 140%;
-        color: #FFFFFF;
-        
-    }
-    
-    .type_of_work{
-        display: flex;
-        flex-wrap: wrap;
-        font-family: 'Roboto', sans-serif;
-        font-size: 12px;
-        line-height: 160%;
-        color: #FFFFFF;
-        opacity: 0.8;
-        padding-bottom: 30px;
-       
-    }
-    
-    .about_teacher{
-        width: 144px;
-        height: 44px;
-        border-radius: 40px;
-        font-family: 'Roboto', sans-serif;
-        background-color: #180b0b;
-        border: 1px solid #FFFFFF;
-        transition: all 0.3s ease-in;
-        color: #FFFFFF;
-        opacity: 1;
-    }
-    
-    .sponsors_block_text{
-        font-size: 38px;
-    }
-
-    .under_computer_block_the_second_block{
-        flex-wrap: wrap;
-        flex-grow: 1;
-    }
-
-    .percent_description{
-        padding-bottom: 30px;
-    }
-
-    .number_of_percent_100, .number_of_percent_conclusion, .number_of_percent_75, .number_of_percent_50{
-        padding:  20px 0 10px 0;
-    }
-
-    .computer_photo{
-        transform: translate(26px, 90px);
-        width: 90%;
-        height: 90%;
-    }
-
-    .square{
-        flex-shrink: 0;
-        width: 468px;
-        height: 436px;
-        background-color: none;
-        border-radius: 0px;
-        border-width: 30px;
-        border-style: solid;
-        border-color: linear-gradient(94.26deg, #C89AFC 9.51%, #7C6AFA 90.23%); /*не рабоатет*/
-        border-color: rgb(190, 31, 190);       
-    }
-
-    .head_block .title{
-        font-family: 'Roboto', sans-serif;
-        font-size: 52px;
-        font-weight: bold;
-        line-height: 140%;
-        color: #FFFFFF;
-        margin-bottom: 50px;
-    }
-
-    .bought_course{
-        margin-bottom: 20px;
-    }
-
-    .computer {
-        flex-direction: column-reverse;
-        row-gap: 32px;
-        column-gap: 32px;
-        margin-top: 32px;
-        padding: 0 32px;
-    }
-
-    .under_computer_block{
-        padding: 0 32px;
-    }
-
-    .quick_start{
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-    }
-
-    .computer_text{
-        padding-top: 0;
-    }   
-
-    .head_block .date-block{
-        display: flex;
-        column-gap: 30px;
-        flex-wrap: wrap;        
-    }
-
-    .head_block .date-block .date{
-        margin-top: 20px;
-        width: 105px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .main_info{
-        margin: 150px 0px 80px;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: bold;
-        font-size: 48px;
-        line-height: 140%;
-        color: #FFFFFF;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-    }
-    
-    
-    .profession{
-        max-width: 1300px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-grow: 1;
-    }
-    
-    .block_of_proffession{
-        max-width: 360px;
-        margin: 0 auto;
-    }
-    
-    .photo_of_profession{
-        margin: 0 auto;
-    }
-    
-    .type_of_profession{
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 140%;
-        color: #FFFFFF;
-        padding: 30px 0 20px 0 ;
-        
-    }
-    
-    .description_for_profession{
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        line-height: 160%;
-        color: #FFFFFF;
-        opacity: 0.8;
-        margin-bottom: 80px;
-    }
-
-    .quick_start_svg{
-        width: 60px;
-        min-height: 50px;
-    }
-    
-    .contestants{
-        display: none;
-    }
-
-    .bought_course{
-        margin-bottom: 25px;
-    }
-
-    
-    .teachers{
-        font-size: 38px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-
-    .name_of_teacher{
-        display: none;
-    }
-
-    .computer_main_text, .quick_start, .main_info, .sponsors_block_text, .name_of_our_teachers{
-        margin: 80px 0px 0px 0px ;
-    }
-
-    .name_of_our_teachers{
-        font-size: 38px;
-        margin: 80px auto 0 auto;
-        text-align: center;
-        align-items: center;
-    }
-
-    .our_teacher_block{
-        padding: 56px 0 0 0;
-    }
-
-    .sponsors_block{
-        padding: 0px;
-    }
-
-    .sponsors_block_main{
-        padding: 0px;
-        display: flex;
-        align-items: flex-end;
-    }
-
-    .head_block{
-        padding: 160px 32px 108px 32px;
-    }
-
-    .under_computer_block_the_first_block{
-        padding: 0px 0px 80px 0px;
-    }
-
-    .under_head_block{
-        background-color:#201c1c ;
-        padding: 44px 32px;
-    }
-
-    .money_line_block{
-        transform: translateY(0px);
-    }
-
-    .main_info{
-        margin: 150px 0px 80px 0px;
-    }
-    .type_of_profession{
-        padding: 20px 0 30px 0;
-    }    
-}
-
-@media (min-width: 320px) and (max-width: 479px){
-
-    .quick_start{
-        display: flex;
-        text-align: left;
-        align-items: flex-end;
-        justify-content: flex-start;
-
-    }
-
-    .under_head_block{
-        padding: 30px 32px 40px 32px;
-        height: 150px;
-    }
-
-    .money_line_block{
-        transform: translateY(-40px);
-    }
-
-    .head_block{
-        padding: 160px 32px 108px 32px;
-    }
-
-    .under_computer_block_the_first_block{
-        padding: 0px 0px 80px 0px;
-    }
-
-    .computer_main_text, .quick_start, .main_info, .sponsors_block_text, .name_of_our_teachers{
-        margin: 80px 0px 0px 0px ;
-    }
-
-    .main_info{
-        margin: 150px 0px 80px 0px;
-    }
-
-    .sponsors_block{
-        padding: 0px;
-    }
-
-    .sponsors_block_main{
-        padding: 0px;
-        display: flex;
-        align-items: flex-end;
-    }
-
-    .contestants{
-        display: none;
-    }
-
-    .bought_course{
-        margin-top: -10px;
-    }
-
-    .money_line_block{
-        margin-top: 40px;
-    }
-
-    header .navigation, header .btn, .nav_link{
-        font-size: 0px;
-        display: none;
-        z-index: -1000;
-    }
-
-    .our_teachers{
-        padding: 70px 0px 28px 0px;
-    }
-    
-    .teachers{
-        display: flex;
-        align-items: center;
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
-        font-size: 48px;
-        line-height: 140%;
-        color: #FFFFFF;
-    }
-    
-    .our_teacher_block{
-        padding-top: 114px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .photo_of_teachers{
-        margin: 0px auto;
-        width: 80%;
-        height: 80%;
-    }
-    
-    .type_of_work{
-        font-family: 'Roboto', sans-serif;
-        font-size: 12px;
-        line-height: 160%;
-        color: #FFFFFF;
-        opacity: 0.8;
-        padding-bottom: 30px;
-       
-    }
-    
-    .about_teacher{
-        width: 144px;
-        height: 44px;
-        border-radius: 40px;
-        font-family: 'Roboto', sans-serif;
-        background-color: #180b0b;
-        border: 1px solid #FFFFFF;
-        transition: all 0.3s ease-in;
-        color: #FFFFFF;
-        opacity: 1;
-    }
-    
-    .sponsors_block_text{
-        text-align: left;
-        font-size: 30px;
-    }
-
-    .under_computer_block_the_second_block{
-        flex-wrap: wrap;
-        flex-grow: 1;
-    }
-
-    .percent_description{
-        padding-bottom: 30px;
-    }
-
-    .number_of_percent_100, .number_of_percent_conclusion, .number_of_percent_75, .number_of_percent_50{
-        padding:  20px 0 10px 0;
-    }
-
-    .computer_photo{
-        transform: translate(0px, 25px);
-        width: 110%;
-        height: 110%;
-    }
-
-    .square{
-        flex-shrink: 0;
-        width: 100%;
-        height: inherit;
-        background-color: none;
-        border-radius: 0px;
-        border-width: 20px;
-        border-style: solid;
-        border-color: linear-gradient(94.26deg, #C89AFC 9.51%, #7C6AFA 90.23%); /*не рабоатет*/
-        border-color: rgb(190, 31, 190);       
-    }
-
-    .head_block .title{
-        font-family: 'Roboto', sans-serif;
-        font-size: 30px;
-        line-height: 140%;
-        color: #FFFFFF;
-        margin-bottom: 50px;
-    }
-
-    .bought_course{
-        margin-bottom: 20px;
-    }
-
-    .computer {
-        flex-direction: column-reverse;
-        row-gap: 32px;
-        column-gap: 32px;
-        margin-top: 32px;
-    }
-
-    .computer_text{
-        padding-top: 0;
-    }   
-
-    .head_block .date-block{
-        display: flex;
-        column-gap: 30px;
-        flex-wrap: wrap;        
-    }
-
-    .head_block .date-block .date{
-        margin-top: 30px;
-        width: 105px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .main_info{   
-        font-family: 'Roboto';
-        font-weight: bold;
-        font-size: 48px;
-        line-height: 140%;
-        color: #FFFFFF;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-    }
-    
-    .profession{
-        max-width: 1300px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        flex-grow: 1;
-    }
-    
-    .block_of_proffession{
-        max-width: 360px;
-        margin: 0 auto;
-    }
-    
-    .photo_of_profession{
-        margin: 0 auto;
-    }
-    
-    .type_of_profession{
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        font-size: 22px;
-        line-height: 140%;
-        color: #FFFFFF;
-        padding: 20px 0 30px 0 ;
-        
-    }
-    
-    .description_for_profession{
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        font-size: 14px;
-        line-height: 160%;
-        color: #FFFFFF;
-        opacity: 0.8;
-        margin-bottom: 80px;
-    }
-
-    .quick_start_txt{
-        font-size: 30px;
-        padding-left: 5px;
-    }
-
-    .footer_input_button{
-        display: flex;
-        flex-wrap: wrap;
-        padding-bottom: 56px;
-        justify-content: center;
-        margin: 0 auto;
-    }
-
-    .email{
-        width: 100%;
-        height: 50px;
-        background: #ffffff34;
-        border-radius: 50px;
-        border: none;
-        color: white;
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        letter-spacing: 1px;
-        padding-left: 26px;
-        align-items: center; 
-        margin-bottom: 16px;   
-    }
-    
-    .footer_button{
-        cursor: pointer;
-        width: 160px;
-        height: 50px;
-        background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
-        border-radius: 50px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        letter-spacing: 1px;
-        color: white;
-        transform: translateX(-40px);
-        margin-left: 25%;
-    }
-
-    .name_of_our_teachers{
-        font-size: 38px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    
-.our_teachers{
-    padding: 70px 0px 18px 0px;
-}
-
-.our_teacher_block{
-    padding-top: 80px;
+      flex-direction: column-reverse;
+      row-gap: 32px;
+      column-gap: 32px;
+      margin-top: 32px;
+      padding: 0 32px;
+    }
+  
+    .computer_text {
+      padding-top: 0;
+    }
+  
+    .head_block .date-block {
+      display: flex;
+      column-gap: 30px;
+      flex-wrap: wrap;
+    }
+  
+    .head_block .date-block .date {
+      margin-top: 20px;
+      width: 105px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .main_info {
+      margin: 150px 0px 80px;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 140%;
+      color: #ffffff;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+  
+    .profession {
+      max-width: 1300px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+  
+    .block_of_proffession {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+  
+    .photo_of_profession {
+      margin: 0 auto;
+    }
+  
+    .type_of_profession {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 140%;
+      color: #ffffff;
+      padding: 30px 0 20px 0;
+    }
+  
+    .description_for_profession {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 160%;
+      color: #ffffff;
+      opacity: 0.8;
+      margin-bottom: 80px;
+    }
+  
+    .quick_start_svg {
+      width: 60px;
+      min-height: 50px;
+    }
+  
+    .bought_course {
+      margin-bottom: 25px;
+    }
+  
+    .teachers {
+      font-size: 38px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    .name_of_teacher {
+      display: none;
+    }
+  
+    .computer_main_text,
+    .quick_start,
+    .main_info,
+    .sponsors_block_text,
+    .name_of_our_teachers {
+      margin: 80px 0px 0px 0px;
+    }
+  
+    .name_of_our_teachers {
+      font-size: 38px;
+      margin: 80px auto 0 auto;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .our_teacher_block {
+      padding: 56px 0 0 0;
+    }
+  
+    .sponsors_block {
+      padding: 0px;
+    }
+  
+    .sponsors_block_main {
+      padding: 0 32px;
+      display: flex;
+      align-items: flex-end;
+    }
+  
+    .sponsors_block_type_of_sponsors {
+      padding: 0 32px;
+    }
+  
+    .quick_start {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+  
+    .head_block {
+      padding: 160px 32px 108px 32px;
+    }
+  
+    .under_computer_block {
+      padding: 0 32px;
+    }
+  
+    .under_computer_block_the_first_block {
+      padding: 0px 0px 80px 0px;
+    }
+  
+    .under_head_block {
+      background-color: #201c1c;
+      padding: 20px 32px 44px 32px;
+      height: 150px;
+    }
+  
+    .money_line_block {
+      transform: translateY(6px);
+    }
+  }
+  
+  .navigation_burger {
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-}
-
-.photo_of_teachers{
-    margin: 0px auto;
-}
-
-.name{
-    padding: 40px 0px 14px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 140%;
-    color: #FFFFFF;
-    
-}
-
-.type_of_work{
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 160%;
-    color: #FFFFFF;
-    opacity: 0.8;
-    padding-bottom: 30px;
-   
-}
-
-.about_teacher{
-    width: 144px;
-    height: 44px;
-    border-radius: 40px;
-    font-family: 'Roboto', sans-serif;
-    background-color: #180b0b;
-    border: 1px solid #FFFFFF;
-    transition: all 0.3s ease-in;
-    color: #FFFFFF;
-    opacity: 1;
-    margin-bottom: 114px;
-}
-
-.about_teacher:last-child{
-    margin-bottom: none;
-}
-
-.name_of_teacher{
-    min-width: 100px;
-    min-height: 40px;
-}
-
-.quick_start_svg{
-    width: 50px;
-    min-height: 50px;
-
-}
-
-.sponsors_logo{
-    min-width: 80px;
-    min-height: 40px;
-
-} 
-
-.header_main_logo{
-    min-width: 50px;
-    min-height: 50px;
-}
-
-.name_of_teacher{
-    display: none;
-}
-
-.the_first_info_footer, .main_info, .head_block .title, .computer_main_text{
-    font-size: 38px;
-}
-
-.footer{
-    padding-top: 40px;
-}
-
-.computer {
-    flex-direction: column-reverse;
-    row-gap: 32px;
-    column-gap: 32px;
-    margin-top: 32px;
-    padding: 0 32px;
-}
-
-.under_computer_block{
-    padding: 0 32px;
-}
-
-}    
+    flex-direction: column;
+    background-color: ivory;
+  }
+  
+  @media (min-width: 480px) and (max-width: 767px) {
+    .burger {
+      display: flex;
+    }
+  
+    .header_main_logo {
+      min-width: 50px;
+      min-height: 50px;
+    }
+  
+    header .btn,
+    header .navigation {
+      display: none;
+    }
+  
+    .our_teachers {
+      padding: 70px 0px 28px 0px;
+    }
+  
+    .teachers {
+      display: flex;
+      align-items: center;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 140%;
+      color: #ffffff;
+    }
+  
+    .our_teacher_block {
+      padding-top: 114px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .photo_of_teachers {
+      margin: 0px auto;
+      width: 80%;
+      height: 80%;
+    }
+  
+    .name {
+      padding: 40px 0px 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      color: #ffffff;
+    }
+  
+    .type_of_work {
+      display: flex;
+      flex-wrap: wrap;
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 160%;
+      color: #ffffff;
+      opacity: 0.8;
+      padding-bottom: 30px;
+    }
+  
+    .about_teacher {
+      width: 144px;
+      height: 44px;
+      border-radius: 40px;
+      font-family: "Roboto", sans-serif;
+      background-color: #180b0b;
+      border: 1px solid #ffffff;
+      transition: all 0.3s ease-in;
+      color: #ffffff;
+      opacity: 1;
+    }
+  
+    .sponsors_block_text {
+      font-size: 38px;
+    }
+  
+    .under_computer_block_the_second_block {
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+  
+    .percent_description {
+      padding-bottom: 30px;
+    }
+  
+    .number_of_percent_100,
+    .number_of_percent_conclusion,
+    .number_of_percent_75,
+    .number_of_percent_50 {
+      padding: 20px 0 10px 0;
+    }
+  
+    .computer_photo {
+      transform: translate(26px, 90px);
+      width: 90%;
+      height: 90%;
+    }
+  
+    .square {
+      flex-shrink: 0;
+      width: 468px;
+      height: 436px;
+      background-color: none;
+      border-radius: 0px;
+      border-width: 30px;
+      border-style: solid;
+      border-color: linear-gradient(
+        94.26deg,
+        #c89afc 9.51%,
+        #7c6afa 90.23%
+      ); /*не рабоатет*/
+      border-color: rgb(190, 31, 190);
+    }
+  
+    .head_block .title {
+      font-family: "Roboto", sans-serif;
+      font-size: 52px;
+      font-weight: bold;
+      line-height: 140%;
+      color: #ffffff;
+      margin-bottom: 50px;
+    }
+  
+    .bought_course {
+      margin-bottom: 20px;
+    }
+  
+    .computer {
+      flex-direction: column-reverse;
+      row-gap: 32px;
+      column-gap: 32px;
+      margin-top: 32px;
+      padding: 0 32px;
+    }
+  
+    .under_computer_block {
+      padding: 0 32px;
+    }
+  
+    .quick_start {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+  
+    .computer_text {
+      padding-top: 0;
+    }
+  
+    .head_block .date-block {
+      display: flex;
+      column-gap: 30px;
+      flex-wrap: wrap;
+    }
+  
+    .head_block .date-block .date {
+      margin-top: 20px;
+      width: 105px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .main_info {
+      margin: 150px 0px 80px;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 140%;
+      color: #ffffff;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+  
+    .profession {
+      max-width: 1300px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+  
+    .block_of_proffession {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+  
+    .photo_of_profession {
+      margin: 0 auto;
+    }
+  
+    .type_of_profession {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 140%;
+      color: #ffffff;
+      padding: 30px 0 20px 0;
+    }
+  
+    .description_for_profession {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 160%;
+      color: #ffffff;
+      opacity: 0.8;
+      margin-bottom: 80px;
+    }
+  
+    .quick_start_svg {
+      width: 60px;
+      min-height: 50px;
+    }
+  
+    .contestants {
+      display: none;
+    }
+  
+    .bought_course {
+      margin-bottom: 25px;
+    }
+  
+    .teachers {
+      font-size: 38px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    .name_of_teacher {
+      display: none;
+    }
+  
+    .computer_main_text,
+    .quick_start,
+    .main_info,
+    .sponsors_block_text,
+    .name_of_our_teachers {
+      margin: 80px 0px 0px 0px;
+    }
+  
+    .name_of_our_teachers {
+      font-size: 38px;
+      margin: 80px auto 0 auto;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .our_teacher_block {
+      padding: 56px 0 0 0;
+    }
+  
+    .sponsors_block {
+      padding: 0px;
+    }
+  
+    .sponsors_block_main {
+      padding: 0px;
+      display: flex;
+      align-items: flex-end;
+    }
+  
+    .head_block {
+      padding: 160px 32px 108px 32px;
+    }
+  
+    .under_computer_block_the_first_block {
+      padding: 0px 0px 80px 0px;
+    }
+  
+    .under_head_block {
+      background-color: #201c1c;
+      padding: 44px 32px;
+    }
+  
+    .money_line_block {
+      transform: translateY(0px);
+    }
+  
+    .main_info {
+      margin: 150px 0px 80px 0px;
+    }
+    .type_of_profession {
+      padding: 20px 0 30px 0;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 479px) {
+    .quick_start {
+      display: flex;
+      text-align: left;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+  
+    .under_head_block {
+      padding: 30px 32px 40px 32px;
+      height: 150px;
+    }
+  
+    .money_line_block {
+      transform: translateY(-40px);
+    }
+  
+    .head_block {
+      padding: 160px 32px 108px 32px;
+    }
+  
+    .under_computer_block_the_first_block {
+      padding: 0px 0px 80px 0px;
+    }
+  
+    .computer_main_text,
+    .quick_start,
+    .main_info,
+    .sponsors_block_text,
+    .name_of_our_teachers {
+      margin: 80px 0px 0px 0px;
+    }
+  
+    .main_info {
+      margin: 150px 0px 80px 0px;
+    }
+  
+    .sponsors_block {
+      padding: 0px;
+    }
+  
+    .sponsors_block_main {
+      padding: 0px;
+      display: flex;
+      align-items: flex-end;
+    }
+  
+    .contestants {
+      display: none;
+    }
+  
+    .bought_course {
+      margin-top: -10px;
+    }
+  
+    .money_line_block {
+      margin-top: 40px;
+    }
+  
+    header .navigation,
+    header .btn,
+    .nav_link {
+      font-size: 0px;
+      display: none;
+      z-index: -1000;
+    }
+  
+    .our_teachers {
+      padding: 70px 0px 28px 0px;
+    }
+  
+    .teachers {
+      display: flex;
+      align-items: center;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 140%;
+      color: #ffffff;
+    }
+  
+    .our_teacher_block {
+      padding-top: 114px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .photo_of_teachers {
+      margin: 0px auto;
+      width: 80%;
+      height: 80%;
+    }
+  
+    .type_of_work {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      line-height: 160%;
+      color: #ffffff;
+      opacity: 0.8;
+      padding-bottom: 30px;
+    }
+  
+    .about_teacher {
+      width: 144px;
+      height: 44px;
+      border-radius: 40px;
+      font-family: "Roboto", sans-serif;
+      background-color: #180b0b;
+      border: 1px solid #ffffff;
+      transition: all 0.3s ease-in;
+      color: #ffffff;
+      opacity: 1;
+    }
+  
+    .sponsors_block_text {
+      text-align: left;
+      font-size: 30px;
+    }
+  
+    .under_computer_block_the_second_block {
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+  
+    .percent_description {
+      padding-bottom: 30px;
+    }
+  
+    .number_of_percent_100,
+    .number_of_percent_conclusion,
+    .number_of_percent_75,
+    .number_of_percent_50 {
+      padding: 20px 0 10px 0;
+    }
+  
+    .computer_photo {
+      transform: translate(0px, 25px);
+      width: 110%;
+      height: 110%;
+    }
+  
+    .square {
+      flex-shrink: 0;
+      width: 100%;
+      height: inherit;
+      background-color: none;
+      border-radius: 0px;
+      border-width: 20px;
+      border-style: solid;
+      border-color: linear-gradient(
+        94.26deg,
+        #c89afc 9.51%,
+        #7c6afa 90.23%
+      ); /*не рабоатет*/
+      border-color: rgb(190, 31, 190);
+    }
+  
+    .head_block .title {
+      font-family: "Roboto", sans-serif;
+      font-size: 30px;
+      line-height: 140%;
+      color: #ffffff;
+      margin-bottom: 50px;
+    }
+  
+    .bought_course {
+      margin-bottom: 20px;
+    }
+  
+    .computer {
+      flex-direction: column-reverse;
+      row-gap: 32px;
+      column-gap: 32px;
+      margin-top: 32px;
+    }
+  
+    .computer_text {
+      padding-top: 0;
+    }
+  
+    .head_block .date-block {
+      display: flex;
+      column-gap: 30px;
+      flex-wrap: wrap;
+    }
+  
+    .head_block .date-block .date {
+      margin-top: 30px;
+      width: 105px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .main_info {
+      font-family: "Roboto";
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 140%;
+      color: #ffffff;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+  
+    .profession {
+      max-width: 1300px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+  
+    .block_of_proffession {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+  
+    .photo_of_profession {
+      margin: 0 auto;
+    }
+  
+    .type_of_profession {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 140%;
+      color: #ffffff;
+      padding: 20px 0 30px 0;
+    }
+  
+    .description_for_profession {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 160%;
+      color: #ffffff;
+      opacity: 0.8;
+      margin-bottom: 80px;
+    }
+  
+    .quick_start_txt {
+      font-size: 30px;
+      padding-left: 5px;
+    }
+  
+    .footer_input_button {
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 56px;
+      justify-content: center;
+      margin: 0 auto;
+    }
+  
+    .email {
+      width: 100%;
+      height: 50px;
+      background: #ffffff34;
+      border-radius: 50px;
+      border: none;
+      color: white;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      padding-left: 26px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+  
+    .footer_button {
+      cursor: pointer;
+      width: 160px;
+      height: 50px;
+      background: linear-gradient(94.78deg, #df5950 11.19%, #451046 93.72%);
+      border-radius: 50px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: white;
+      transform: translateX(-40px);
+      margin-left: 25%;
+    }
+  
+    .name_of_our_teachers {
+      font-size: 38px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    .our_teachers {
+      padding: 70px 0px 18px 0px;
+    }
+  
+    .our_teacher_block {
+      padding-top: 80px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .photo_of_teachers {
+      margin: 0px auto;
+    }
+  
+    .name {
+      padding: 40px 0px 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 140%;
+      color: #ffffff;
+    }
+  
+    .type_of_work {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      line-height: 160%;
+      color: #ffffff;
+      opacity: 0.8;
+      padding-bottom: 30px;
+    }
+  
+    .about_teacher {
+      width: 144px;
+      height: 44px;
+      border-radius: 40px;
+      font-family: "Roboto", sans-serif;
+      background-color: #180b0b;
+      border: 1px solid #ffffff;
+      transition: all 0.3s ease-in;
+      color: #ffffff;
+      opacity: 1;
+      margin-bottom: 114px;
+    }
+  
+    .about_teacher:last-child {
+      margin-bottom: none;
+    }
+  
+    .name_of_teacher {
+      min-width: 100px;
+      min-height: 40px;
+    }
+  
+    .quick_start_svg {
+      width: 50px;
+      min-height: 50px;
+    }
+  
+    .sponsors_logo {
+      min-width: 80px;
+      min-height: 40px;
+    }
+  
+    .header_main_logo {
+      min-width: 50px;
+      min-height: 50px;
+    }
+  
+    .name_of_teacher {
+      display: none;
+    }
+  
+    .the_first_info_footer,
+    .main_info,
+    .head_block .title,
+    .computer_main_text {
+      font-size: 38px;
+    }
+  
+    .footer {
+      padding-top: 40px;
+    }
+  
+    .computer {
+      flex-direction: column-reverse;
+      row-gap: 32px;
+      column-gap: 32px;
+      margin-top: 32px;
+      padding: 0 32px;
+    }
+  
+    .under_computer_block {
+      padding: 0 32px;
+    }
+  }
+  
