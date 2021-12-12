@@ -1800,6 +1800,10 @@ header .btn:hover{
   }
   
   @media (min-width: 320px) and (max-width: 479px) {
+      .burger {
+      display: flex;
+    }
+      
     .quick_start {
       display: flex;
       text-align: left;
