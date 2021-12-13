@@ -886,7 +886,8 @@ header .btn:hover{
     }
   }
   
-  @media (min-width: 882px) and (max-width: 991px) {
+  @media (min-width: 882px) and (max-width: 991px) {   
+
     header .navigation {
       column-gap: 40px;
     }
@@ -1195,6 +1196,11 @@ header .btn:hover{
   }
   
   @media (min-width: 859px) and (max-width: 881px) {
+    
+    body{
+        background-attachment: scroll;
+    }
+
     .number_of_percent_100 {
       padding: 20px 0 20px 0px;
     }
@@ -1808,9 +1814,16 @@ header .btn:hover{
         margin-top: 0;
     }
 
+    body{
+        background-attachment: scroll;
+    }
   }
   
   @media (min-width: 320px) and (max-width: 479px) {
+
+    body{
+        background-attachment: scroll;
+    }
 
     header{
         position: fixed;

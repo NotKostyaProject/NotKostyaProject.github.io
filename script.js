@@ -16,7 +16,7 @@ function toggleOpenClass() {
 }
 
 function onScroll() {
-  if (window.scrollY > 200) {
+  if (window.scrollY > 90) {
     header.style.backgroundColor = "#000000ef";
   } else {
     header.style.backgroundColor = "transparent";
