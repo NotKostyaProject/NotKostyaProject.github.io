@@ -1815,7 +1815,7 @@ header .btn:hover{
     }
 
     .head_block{
-        background-attachment: scroll;
+        background-attachment: local;
     }
   }
   
@@ -1834,7 +1834,7 @@ header .btn:hover{
     }
 
     .head_block{
-        background-attachment: scroll;
+        background-attachment: local;
     }
 
     .burger {
