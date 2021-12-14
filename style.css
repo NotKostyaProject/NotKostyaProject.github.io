@@ -1499,10 +1499,6 @@ header .btn:hover{
   
   @media (min-width: 480px) and (max-width: 767px) {
 
-    .head_block{
-        background-attachment: scroll;
-    }
-
     .burger {
         display: flex;
       }
@@ -1815,6 +1811,10 @@ header .btn:hover{
     }
 
     body{
+        background:#000000;
+    }
+
+    .head_block{
         background-attachment: scroll;
     }
   }
@@ -1822,7 +1822,7 @@ header .btn:hover{
   @media (min-width: 320px) and (max-width: 479px) {
 
     body{
-        background-attachment: scroll;
+        background: #000000;
     }
 
     header{
