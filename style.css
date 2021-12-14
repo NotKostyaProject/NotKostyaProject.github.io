@@ -1834,7 +1834,7 @@ header .btn:hover{
     }
 
     .head_block{
-        background-attachment: local;
+        background-attachment: fixed;
     }
 
     .burger {
